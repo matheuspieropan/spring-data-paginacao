@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class Pessoa {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +20,7 @@ public class Pessoa {
 
     private String nome;
 
-    private int idade;
+    private String login;
+
+    private String senha;
 }

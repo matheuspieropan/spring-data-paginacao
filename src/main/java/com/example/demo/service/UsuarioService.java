@@ -21,4 +21,12 @@ public class UsuarioService {
     public List<UsuarioProjections> buscarNomesUsuariosProjections() {
         return repository.buscarNomesUsuariosProjections();
     }
+
+    public List<Usuario> buscarLimitada() {
+        return repository.findTop2By();
+    }
+
+    public List<Usuario> buscarPorNome(String nome) {
+        return repository.findByNomeContainsIgnoreCase(nome);
+    }
 }

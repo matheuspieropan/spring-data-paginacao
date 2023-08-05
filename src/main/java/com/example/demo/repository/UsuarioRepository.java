@@ -14,4 +14,16 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 
     @Query("select usuario.nome as nome, usuario.login as login from Usuario usuario")
     List<UsuarioProjections> buscarNomesUsuariosProjections();
+
+    // buscando por nome ignorando maisculas e minusculas
+    List<Usuario> findByNomeIgnoreCase(String nome);
+
+    // limitando registro em duas consultas
+    List<Usuario> findTop2By();
+
+    // buscando por nome que contenha um determinado trecho
+    List<Usuario> findByNomeContains(String nome);
+
+    // buscando por nome que contenha um determinado trecho
+    List<Usuario> findByNomeContainsIgnoreCase(String nome);
 }

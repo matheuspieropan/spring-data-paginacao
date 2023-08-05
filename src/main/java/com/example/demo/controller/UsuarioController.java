@@ -4,6 +4,7 @@ import com.example.demo.service.UsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,15 @@ public class UsuarioController {
     @GetMapping("/projections")
     public ResponseEntity buscarNomesUsuariosProjections() {
         return ResponseEntity.ok(service.buscarNomesUsuariosProjections());
+    }
+
+    @GetMapping("/limitada")
+    public ResponseEntity buscarLimitada() {
+        return ResponseEntity.ok(service.buscarLimitada());
+    }
+
+    @GetMapping("/{nome}")
+    public ResponseEntity buscarPorNome(@PathVariable String nome) {
+        return ResponseEntity.ok(service.buscarPorNome(nome));
     }
 }

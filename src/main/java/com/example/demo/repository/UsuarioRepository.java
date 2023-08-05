@@ -18,7 +18,7 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
     // buscando por nome ignorando maisculas e minusculas
     List<Usuario> findByNomeIgnoreCase(String nome);
 
-    // limitando registro em duas consultas
+    // limitando registro em dois resultados
     List<Usuario> findTop2By();
 
     // buscando por nome que contenha um determinado trecho
